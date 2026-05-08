@@ -1,0 +1,100 @@
+.shell {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  position: relative;
+  background-color: #9dcf6a;
+  overflow: visible;
+}
+
+.footerWave {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin-bottom: -2px;
+}
+
+.footerBody {
+  position: relative;
+  background-color: #5a9e2f;
+  padding: 2rem 1.25rem 3rem;
+  min-height: 160px;
+}
+
+.footerInner {
+  position: relative;
+  z-index: 4;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 2rem;
+  font-size: 0.92rem;
+  color: #d6f0b2;
+  text-align: center;
+  font-weight: 500;
+}
+
+
+.sheep {
+  position: absolute;
+  z-index: 3;
+  display: inline-block;
+  font-size: 2.2rem;
+  line-height: 1;
+  filter: drop-shadow(0 1px 0 rgba(20, 52, 18, 0.25));
+  animation: sheepWander var(--speed) ease-in-out infinite;
+}
+
+.sheepOne {
+  left: 22%;
+  bottom: 56px;
+  --range: 26px;
+  --speed: 6.7s;
+  --scale: 1.2;
+  --flip: 1;
+}
+
+.sheepTwo {
+  left: 56%;
+  bottom: 72px;
+  --range: 34px;
+  --speed: 7.9s;
+  --scale: 1.35;
+  --flip: -1;
+}
+
+.sheepThree {
+  left: 76%;
+  bottom: 50px;
+  --range: 22px;
+  --speed: 5.8s;
+  --scale: 1.15;
+  --flip: 1;
+}
+
+@keyframes sheepWander {
+  0% {
+    transform: translateX(0) scale(var(--scale)) scaleX(var(--flip));
+  }
+  18% {
+    transform: translateX(calc(var(--range) * -0.45)) scale(var(--scale)) scaleX(var(--flip));
+  }
+  39% {
+    transform: translateX(calc(var(--range) * 0.65)) scale(var(--scale)) scaleX(var(--flip));
+  }
+  57% {
+    transform: translateX(calc(var(--range) * -0.22)) scale(var(--scale)) scaleX(var(--flip));
+  }
+  76% {
+    transform: translateX(var(--range)) scale(var(--scale)) scaleX(var(--flip));
+  }
+  100% {
+    transform: translateX(0) scale(var(--scale)) scaleX(var(--flip));
+  }
+}

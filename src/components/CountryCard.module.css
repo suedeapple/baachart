@@ -1,0 +1,161 @@
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+  align-items: center;
+
+  padding: 1.15rem 1.3rem;
+  min-height: 170px;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 120px;
+  background: transparent;
+  border: 0;
+  isolation: isolate;
+  margin: 0.1rem 0.2rem;
+  will-change: transform;
+  transition: translate 120ms ease-out;
+  transform: none;
+  z-index: 1;
+}
+
+.card:hover {
+  translate: 0 -16px;
+}
+
+.card:hover .baaBubble {
+  opacity: 1;
+  transform: translate(-50%, -100%) scale(1);
+}
+
+.baaBubble {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translate(-50%, -100%) scale(0.6);
+  opacity: 0;
+  transition: opacity 120ms ease-out, transform 120ms ease-out;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #000;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.baaBubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-width: 32px 5px 0 5px;
+  border-top-color: #000;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255, 252, 240, 0.1);
+  border: 0;
+  z-index: 1;
+}
+
+@media (min-width: 600px) {
+  .card {
+    transform: translateX(calc(var(--r) * 1.4px - 70px)) translateY(calc(var(--r) * 1.2px - 60px));
+  }
+}
+
+@media (max-width: 599px) {
+  .card {
+    max-width: 100%;
+    transform: none;
+  }
+}
+
+.card > * {
+  position: relative;
+  z-index: 2;
+}
+
+.card[data-flip] {
+  grid-template-columns: 1fr auto;
+}
+
+.card[data-flip] .sheepWrap {
+  order: 2;
+}
+
+.card[data-flip] .sheepImg {
+  transform: scaleX(-1);
+}
+
+.card[data-flip] .details {
+  order: 1;
+  align-items: center;
+}
+
+.sheepWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.sheepImg {
+  display: block;
+  width: 240px;
+  height: auto;
+  overflow: visible;
+}
+
+
+.flagWrap {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.flag {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.details {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.countryName {
+  font-size: 1.08rem;
+  line-height: 1.2;
+  color: #000;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.meta {
+  margin-top: 0.2rem;
+  font-size: 0.78rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.stat {
+  margin-top: 0.35rem;
+  font-size: 0.92rem;
+  color: #000;
+  font-weight: 700;
+}

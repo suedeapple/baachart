@@ -1,0 +1,141 @@
+.wrap {
+  width: 100%;
+  border-radius: 0 14px 14px 14px;
+  overflow: hidden;
+  background: #fffcf0;
+  border: 3px solid #000;
+  display: flex;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chartBg {
+  fill: rgba(251, 245, 231, 0.6);
+}
+
+.fieldOverlay {
+  fill: rgba(76, 144, 58, 0.72);
+}
+
+.cloud {
+  fill: rgba(255, 255, 255, 0.88);
+}
+
+.cloudSoft {
+  fill: rgba(255, 255, 255, 0.7);
+}
+
+.cloudSlow {
+  animation: driftSlow 38s linear infinite;
+}
+
+.cloudMid {
+  animation: driftMid 30s linear infinite;
+}
+
+.cloudFast {
+  animation: driftFast 24s linear infinite;
+}
+
+@keyframes driftSlow {
+  from {
+    transform: translateX(-170px);
+  }
+
+  to {
+    transform: translateX(1080px);
+  }
+}
+
+@keyframes driftMid {
+  from {
+    transform: translateX(-220px);
+  }
+
+  to {
+    transform: translateX(980px);
+  }
+}
+
+@keyframes driftFast {
+  from {
+    transform: translateX(-260px);
+  }
+
+  to {
+    transform: translateX(940px);
+  }
+}
+
+.gridLine {
+  stroke: rgba(34, 61, 26, 0.15);
+  stroke-dasharray: 4 5;
+}
+
+.axisLine {
+  stroke: rgba(34, 61, 26, 0.35);
+  stroke-width: 1.5;
+}
+
+.axisText {
+  font-size: 12px;
+  fill: var(--muted);
+}
+
+.mainPath {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sheepSprite {
+  opacity: 0.98;
+}
+
+.sheepMover {
+  pointer-events: none;
+}
+
+.empty {
+  padding: 1rem;
+  color: var(--muted);
+}
+
+.hoverGroup {
+  pointer-events: none;
+}
+
+.hoverLine {
+  stroke: rgba(0, 0, 0, 0.3);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+}
+
+.hoverDot {
+  fill: #fff;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+}
+
+.tooltipBox {
+  fill: rgba(20, 40, 15, 0.85);
+}
+
+.tooltipYear {
+  font-size: 12px;
+  fill: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+}
+
+.tooltipValue {
+  font-size: 15px;
+  font-weight: 700;
+  fill: #fff;
+  font-family: inherit;
+}
