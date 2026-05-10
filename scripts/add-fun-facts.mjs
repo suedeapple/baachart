@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const API_KEY = "process.env.ANTHROPIC_API_KEY";
+const API_KEY = process.env.ANTHROPIC_API_KEY;
 const JSON_PATH = new URL("../public/sheep.json", import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1");
 
 const data = JSON.parse(fs.readFileSync(JSON_PATH, "utf8"));
