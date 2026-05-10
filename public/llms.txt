@@ -1,0 +1,17 @@
+# BaaChart
+
+> BaaChart is a country-by-country sheep population explorer covering 1961 to 2021, built in conjunction with Social Media Executive (socialmediaexec.co.uk).
+
+## What this site is
+
+BaaChart visualises sheep population data from FAOSTAT alongside human population data from the World Bank. Each country page includes historical charts, sheep-to-people ratios, peak and lowest population stats, and a year-by-year data table.
+
+## Data sources
+
+- Sheep statistics: FAOSTAT (Food and Agriculture Organization of the United Nations) — https://www.fao.org/faostat/
+- Human population: World Bank — https://data.worldbank.org/
+
+## Built by
+
+- Web design: Suedeapple — https://www.suedeapple.co.uk
+- In conjunction with: Social Media Executive — https://socialmediaexec.co.uk

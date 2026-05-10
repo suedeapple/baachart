@@ -38,7 +38,7 @@ export default function RootLayout({
                 <p className={`${styles.footerSources} ${styles.footerData}`}>Sheep statistics sourced from <a href="https://www.fao.org/faostat/" target="_blank" rel="noopener noreferrer">FAOSTAT</a>. Human population data from the <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">World Bank</a>.</p>
                 <div className={styles.footerTop}>
                   <p className={styles.footerCopyright}>Copyright (c) 2026 BaaChart. All rights reserved.</p>
-                  <p className={styles.footerSources}>Web design by <a href="https://www.suedeapple.co.uk" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>suedeapple</a></p>
+                  <p className={styles.footerSources}>Web design by <a href="https://www.suedeapple.co.uk/?utm_source=baachart&utm_medium=referral&utm_campaign=footer_credit" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>suedeapple</a></p>
                 </div>
               </div>
             </div>

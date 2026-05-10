@@ -67,9 +67,9 @@ export default function CtaBand() {
           <div className={styles.ctaText}>
             <h2 className={styles.ctaHeading}>Join The Social Flock!</h2>
             <p className={styles.ctaSub}>Social media training &amp; consultancy for businesses.</p>
-            <p className={styles.ctaCredit}>BaaChart, brought to you in conjunction with <a href="https://socialmediaexec.co.uk/" target="_blank" rel="noopener noreferrer" className={styles.ctaCreditLink}>socialmediaexec.co.uk <FaIcon icon={faArrowUpRightFromSquare} className={styles.ctaUrlIcon} /></a></p>
+            <p className={styles.ctaCredit}>BaaChart, brought to you in conjunction with <a href="https://socialmediaexec.co.uk/?utm_source=baachart&utm_medium=referral&utm_campaign=cta_credit" target="_blank" rel="noopener noreferrer" className={styles.ctaCreditLink}>socialmediaexec.co.uk <FaIcon icon={faArrowUpRightFromSquare} className={styles.ctaUrlIcon} /></a></p>
           </div>
-          <a className={styles.ctaBtn} href="https://socialmediaexec.co.uk/" target="_blank" rel="noopener noreferrer">
+          <a className={styles.ctaBtn} href="https://socialmediaexec.co.uk/?utm_source=baachart&utm_medium=referral&utm_campaign=cta_button" target="_blank" rel="noopener noreferrer">
             Learn more
           </a>
         </div>
