@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import BackToTop from "@/components/BackToTop";
 import styles from "./layout.module.css";
 import "./globals.css";
 
@@ -33,10 +34,17 @@ export default function RootLayout({
               <path d="M0,80 C360,0 1080,0 1440,80 L1440,80 L0,80 Z" fill="#5a9e2f" />
             </svg>
             <div className={styles.footerBody}>
-              <div className={styles.footerInner}>Copyright (c) 2026 BaaChart. All rights reserved.</div>
+              <div className={styles.footerInner}>
+                <p className={`${styles.footerSources} ${styles.footerData}`}>Sheep statistics sourced from <a href="https://www.fao.org/faostat/" target="_blank" rel="noopener noreferrer">FAOSTAT</a>. Human population data from the <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">World Bank</a>.</p>
+                <div className={styles.footerTop}>
+                  <p className={styles.footerCopyright}>Copyright (c) 2026 BaaChart. All rights reserved.</p>
+                  <p className={styles.footerSources}>Web design by <a href="https://www.suedeapple.co.uk" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>suedeapple</a></p>
+                </div>
+              </div>
             </div>
           </footer>
         </div>
+        <BackToTop />
       </body>
     </html>
   );

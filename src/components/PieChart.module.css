@@ -1,0 +1,11 @@
+.pie {
+  cursor: default;
+  display: block;
+}
+
+.tipText {
+  font-size: 13px;
+  font-weight: 700;
+  fill: #fff;
+  font-family: inherit;
+}

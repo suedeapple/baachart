@@ -1,0 +1,92 @@
+.wrap {
+  width: 100%;
+  border-radius: 0;
+  overflow: hidden;
+  background: #000;
+  border: 3px solid #fff;
+  display: flex;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gridLine {
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-dasharray: 4 5;
+}
+
+.axisLine {
+  stroke: #000;
+  stroke-width: 1.5;
+}
+
+.axisText {
+  font-size: 12px;
+  fill: rgba(255,255,255,0.7);
+}
+
+.legendText {
+  font-size: 12px;
+  fill: rgba(255,255,255,0.7);
+}
+
+.sheepLine {
+  fill: none;
+  stroke: #4b8b3b;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.popLine {
+  fill: none;
+  stroke: #4a90e2;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hoverLine {
+  stroke: rgba(0, 0, 0, 0.25);
+  stroke-width: 1.5;
+  stroke-dasharray: 4 3;
+}
+
+.sheepDot {
+  fill: #fff;
+  stroke: #4b8b3b;
+  stroke-width: 2.5;
+}
+
+.popDot {
+  fill: #fff;
+  stroke: #4a90e2;
+  stroke-width: 2.5;
+}
+
+.tooltipBox {
+  fill: rgba(20, 40, 15, 0.88);
+}
+
+.tooltipYear {
+  font-size: 12px;
+  fill: rgba(255, 255, 255, 0.65);
+  font-family: inherit;
+}
+
+.tooltipSheep {
+  font-size: 13px;
+  font-weight: 700;
+  fill: #4b8b3b;
+  font-family: inherit;
+}
+
+.tooltipPop {
+  font-size: 13px;
+  font-weight: 700;
+  fill: #7ab5e8;
+  font-family: inherit;
+}

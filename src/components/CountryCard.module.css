@@ -14,14 +14,8 @@
   border: 0;
   isolation: isolate;
   margin: 0.1rem 0.2rem;
-  will-change: transform;
-  transition: translate 120ms ease-out;
   transform: none;
   z-index: 1;
-}
-
-.card:hover {
-  translate: 0 -16px;
 }
 
 .card:hover .baaBubble {

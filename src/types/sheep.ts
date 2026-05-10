@@ -9,19 +9,7 @@ export type CountrySeries = {
   iso3code: string;
   slug: string;
   pun?: string;
-  description?: string;
-  sections?: {
-    Overview: string;
-    Geography: string;
-    History: string;
-    Culture: string;
-    Economy: string;
-    Food: string;
-    Tourism: string;
-    People: string;
-    Nature: string;
-    "Fun Facts": string;
-  };
+  funFact?: string;
   points: SheepPoint[];
   latestValue: number;
 };

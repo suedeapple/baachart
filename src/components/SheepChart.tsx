@@ -58,11 +58,6 @@ function buildSmoothPath(points: Point[]): string {
   return path;
 }
 
-function seededUnit(index: number, salt: number): number {
-  const value = Math.sin(index * 12.9898 + salt * 78.233) * 43758.5453;
-  return value - Math.floor(value);
-}
-
 export default function SheepChart({ country, points }: SheepChartProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const [hover, setHover] = useState<{ x: number; y: number; year: number; value: number } | null>(null);
@@ -95,7 +90,6 @@ export default function SheepChart({ country, points }: SheepChartProps) {
     y: toY(point.value),
   }));
   const path = buildSmoothPath(chartPoints);
-  const flockCount = 7;
   const yAxisTicks = 5;
 
   const handleMouseMove = useCallback((e: React.MouseEvent<SVGSVGElement>) => {
@@ -113,8 +107,8 @@ export default function SheepChart({ country, points }: SheepChartProps) {
   }, [points, minYear, maxYear, plotWidth, padding.left, width]);
 
   const tooltipPad = 10;
-  const tooltipW = 130;
-  const tooltipH = 46;
+  const tooltipW = 160;
+  const tooltipH = 62;
   const tooltipX = hover
     ? hover.x + tooltipPad + tooltipW > width - padding.right
       ? hover.x - tooltipW - tooltipPad
@@ -152,7 +146,7 @@ export default function SheepChart({ country, points }: SheepChartProps) {
         </defs>
 
         <rect x="0" y="0" width={width} height={height} className={styles.chartBg} />
-        <rect x="0" y="0" width={width} height={height} fill="#fffcf0" />
+        <rect x="0" y="0" width={width} height={height} fill="#000" />
 
         {Array.from({ length: yAxisTicks + 1 }).map((_, index) => {
           const ratio = index / yAxisTicks;
@@ -181,80 +175,6 @@ export default function SheepChart({ country, points }: SheepChartProps) {
         />
         <path d={path} className={styles.mainPath} />
 
-        {Array.from({ length: flockCount }).map((_, index) => {
-          const forward = index % 2 === 0;
-          const pausePoint = 0.2 + seededUnit(index, 8) * 0.6;
-          const pauseStart = 0.36 + seededUnit(index, 9) * 0.2;
-          const pauseEnd = Math.min(0.88, pauseStart + 0.14 + seededUnit(index, 10) * 0.08);
-          const keyPoints = forward
-            ? `0;${pausePoint.toFixed(3)};${pausePoint.toFixed(3)};1`
-            : `1;${pausePoint.toFixed(3)};${pausePoint.toFixed(3)};0`;
-          const keyTimes = `0;${pauseStart.toFixed(3)};${pauseEnd.toFixed(3)};1`;
-
-          const behavior = index % 3;
-          const isJump = behavior === 1;
-          const baseBehaviorDur = 4.2 + seededUnit(index, 11) * 3.1;
-          const behaviorDur = `${isJump ? Math.max(1.8, baseBehaviorDur * 0.52) : baseBehaviorDur}s`;
-          const behaviorBegin = `-${seededUnit(index, 12) * 2.5}s`;
-
-          const yValues =
-            behavior === 0
-              ? "-6;-6;-6;-1;-1;-6;-6" // graze
-              : behavior === 1
-                ? "-6;-6;-8;-20;-4;-7;-6" // jump
-                : "-6;-8;-5;-7;-4;-6"; // gentle bob
-
-          const yKeyTimes =
-            behavior === 0
-              ? "0;0.18;0.35;0.42;0.56;0.68;1"
-              : behavior === 1
-                ? "0;0.24;0.36;0.5;0.66;0.8;1"
-                : "0;0.2;0.4;0.6;0.8;1";
-
-          const yKeySplines = isJump
-            ? "0.4 0 0.8 0.9;0.2 0 0.2 1;0.15 0.9 0.2 1;0.6 0.05 1 0.4;0.2 0.8 0.3 1;0.2 0 0.3 1"
-            : undefined;
-
-          return (
-            <g key={`mover-${index}`} className={styles.sheepMover}>
-              <animateMotion
-                dur={`${19 + index * 1.8}s`}
-                repeatCount="indefinite"
-                rotate="auto"
-                begin={`-${index * 1.6}s`}
-                path={path}
-                keyPoints={keyPoints}
-                keyTimes={keyTimes}
-                calcMode="linear"
-              />
-              <g
-                className={styles.sheepSprite}
-                transform={index % 2 === 0 ? "scale(-1,1)" : undefined}
-              >
-                <image
-                  href="/sheep.svg"
-                  x={-34}
-                  y={-33}
-                  width={68}
-                  height={54}
-                  preserveAspectRatio="xMidYMid meet"
-                >
-                  <animate
-                    attributeName="y"
-                    values="-33;-33;-35;-47;-31;-34;-33"
-                    keyTimes={yKeyTimes}
-                    calcMode={isJump ? "spline" : "linear"}
-                    keySplines={yKeySplines}
-                    dur={behaviorDur}
-                    begin={behaviorBegin}
-                    repeatCount="indefinite"
-                  />
-                </image>
-              </g>
-              <title>{`${country} sheep roaming along the trend line`}</title>
-            </g>
-          );
-        })}
 
         <line
           x1={padding.left}
@@ -280,7 +200,8 @@ export default function SheepChart({ country, points }: SheepChartProps) {
             <circle cx={hover.x} cy={hover.y} r={6} className={styles.hoverDot} />
             <rect x={tooltipX} y={tooltipY} width={tooltipW} height={tooltipH} rx={8} className={styles.tooltipBox} />
             <text x={tooltipX + 10} y={tooltipY + 17} className={styles.tooltipYear}>{hover.year}</text>
-            <text x={tooltipX + 10} y={tooltipY + 36} className={styles.tooltipValue}>{tooltipFormatter.format(hover.value)}</text>
+            <text x={tooltipX + 10} y={tooltipY + 33} className={styles.tooltipYear}>Sheep Flockulation</text>
+            <text x={tooltipX + 10} y={tooltipY + 52} className={styles.tooltipValue}>{tooltipFormatter.format(hover.value)}</text>
           </g>
         )}
       </svg>

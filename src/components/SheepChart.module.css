@@ -1,9 +1,9 @@
 .wrap {
   width: 100%;
-  border-radius: 0 14px 14px 14px;
+  border-radius: 0;
   overflow: hidden;
-  background: #fffcf0;
-  border: 3px solid #000;
+  background: #000;
+  border: 3px solid #fff;
   display: flex;
 }
 
@@ -72,18 +72,18 @@
 }
 
 .gridLine {
-  stroke: rgba(34, 61, 26, 0.15);
+  stroke: rgba(255, 255, 255, 0.2);
   stroke-dasharray: 4 5;
 }
 
 .axisLine {
-  stroke: rgba(34, 61, 26, 0.35);
+  stroke: #000;
   stroke-width: 1.5;
 }
 
 .axisText {
   font-size: 12px;
-  fill: var(--muted);
+  fill: rgba(255,255,255,0.7);
 }
 
 .mainPath {

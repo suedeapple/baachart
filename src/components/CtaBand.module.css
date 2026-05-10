@@ -1,0 +1,220 @@
+.ctaBand {
+  padding: 4rem 1.5rem;
+}
+
+.ctaInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 5px solid #fff;
+  background: linear-gradient(180deg, #4a90e2 0%, #74aee8 55%, #a8cff0 100%);
+  min-height: 280px;
+  padding: 3rem 3.5rem 9rem;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.ctaText {
+  flex: 1;
+  min-width: 0;
+}
+
+.ctaHeading {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ctaSub {
+  margin: 0.75rem 0 0;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.5;
+}
+
+.ctaCredit {
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.02em;
+}
+
+.ctaCreditLink {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.ctaCreditLink:hover {
+  color: #ffd700;
+}
+
+.ctaBtn {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 1rem 2.25rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111;
+  background: #ffd700;
+  border: 3px solid #ffd700;
+  border-radius: 0;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.ctaBtn:hover {
+  background: #fff;
+  border-color: #fff;
+}
+
+.ctaUrlIcon {
+  width: 0.75rem !important;
+  height: 0.75rem !important;
+}
+
+.ctaHills {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  display: block;
+}
+
+.ctaMeadow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 130px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sheepWrap {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+  overflow: visible;
+}
+
+.meadowSheep {
+  display: block;
+  height: auto;
+  overflow: visible;
+}
+
+.sheep1 { left: 8%;  bottom: 48px; }
+.sheep2 { left: 23%; bottom: 66px; }
+.sheep3 { left: 47%; bottom: 22px; }
+.sheep4 { left: 68%; bottom: 50px; }
+.sheep5 { left: 83%; bottom: 46px; }
+
+.sheep1 .meadowSheep { width: 62px; }
+.sheep2 .meadowSheep { width: 46px; transform: scaleX(-1); }
+.sheep3 .meadowSheep { width: 70px; transform: scaleX(-1); }
+.sheep4 .meadowSheep { width: 50px; }
+.sheep5 .meadowSheep { width: 58px; transform: scaleX(-1); }
+
+.baaBubble {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 3px 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #333;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s;
+}
+
+.baaBubble::before {
+  content: "";
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 7px solid transparent;
+  border-top-color: #333;
+}
+
+.baaBubble::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #fff;
+}
+
+.sheepWrap:hover .baaBubble,
+.baaVisible {
+  opacity: 1;
+}
+
+.ctaBorderLabel {
+  display: flex;
+  justify-content: center;
+  margin-top: -1px;
+  position: relative;
+  z-index: 10;
+}
+
+.ctaBorderLabel span {
+  background: #fff;
+  color: #111;
+  padding: 0.4em 1.5em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transform: translateY(-50%);
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.ctaBorderLabel a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.ctaBorderLabel a:hover {
+  color: #4a90e2;
+}
+
+@media (max-width: 700px) {
+  .ctaInner {
+    padding: 2.5rem 2rem 8rem;
+  }
+
+  .ctaContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+}
