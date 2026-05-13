@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BaaChart",
-  description: "Country-by-country sheep population explorer from 1961 to 2021.",
+  title: "BaaChart – Global Sheep Population Explorer",
+  description: "Explore sheep population data for every country from 1961 to 2021. Compare flocks to human populations, track six decades of change, and discover which nations are truly sheep country.",
 };
 
 export default function RootLayout({
@@ -35,9 +35,9 @@ export default function RootLayout({
             </svg>
             <div className={styles.footerBody}>
               <div className={styles.footerInner}>
-                <p className={`${styles.footerSources} ${styles.footerData}`}>Sheep statistics sourced from <a href="https://www.fao.org/faostat/" target="_blank" rel="noopener noreferrer">FAOSTAT</a>. Human population data from the <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">World Bank</a>.</p>
+                <p className={`${styles.footerSources} ${styles.footerData}`}>Sheep statistics sourced from <a href="https://www.fao.org/faostat/" target="_blank" rel="noopener noreferrer">FAOSTAT</a>. Human population data from the <a href="https://data.worldbank.org/" target="_blank" rel="noopener noreferrer">World Bank</a></p>
                 <div className={styles.footerTop}>
-                  <p className={styles.footerCopyright}>Copyright (c) {new Date().getFullYear()} BaaChart. All rights reserved.</p>
+                  <p className={styles.footerCopyright}>Copyright (c) {new Date().getFullYear()} BaaChart</p>
                   <p className={styles.footerSources}>Web design by <a href="https://www.suedeapple.co.uk/?utm_source=baachart&utm_medium=referral&utm_campaign=footer_credit" target="_blank" rel="noopener noreferrer" className={styles.footerLink}>suedeapple</a></p>
                 </div>
               </div>

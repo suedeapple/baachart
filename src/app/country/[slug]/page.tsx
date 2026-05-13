@@ -38,8 +38,8 @@ export async function generateMetadata({ params }: CountryPageProps): Promise<Me
   const country = getCountryBySlug(slug);
   if (!country) return { title: "Country Not Found | BaaChart" };
   return {
-    title: `${country.country} Sheep Population | BaaChart`,
-    description: `See ${country.country}'s sheep population history from 1961 to 2021 on BaaChart.`,
+    title: `${country.country} Sheep Population 1961–2021 | BaaChart`,
+    description: `How many sheep does ${country.country} have? Explore six decades of sheep population data, see how the flock compares to the human population, and track peaks and troughs from 1961 to 2021.`,
   };
 }
 

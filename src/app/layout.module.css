@@ -168,6 +168,14 @@
   --flip: 1;
 }
 
+@media (max-width: 600px) {
+  .footerTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
 @keyframes sheepWander {
   0% {
     transform: translateX(0) scale(var(--scale)) scaleX(var(--flip));

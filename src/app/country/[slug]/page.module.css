@@ -429,6 +429,7 @@
   border: 3px solid #fff;
   border-radius: 0;
   overflow: hidden;
+  margin-bottom: 4rem;
 }
 
 .dataTable {
@@ -621,7 +622,14 @@
   row-gap: 7rem;
   justify-items: center;
   overflow: visible;
-  padding: 7rem 0;
+  padding: 4rem 0;
+}
+
+@media (max-width: 760px) {
+  .randomGrid {
+    column-gap: 2rem;
+    row-gap: 3rem;
+  }
 }
 
 @media (min-width: 600px) {
