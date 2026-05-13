@@ -17,6 +17,17 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BaaChart – Global Sheep Population Explorer",
   description: "Explore sheep population data for every country from 1961 to 2021. Compare flocks to human populations, track six decades of change, and discover which nations are truly sheep country.",
+  openGraph: {
+    title: "BaaChart – Global Sheep Population Explorer",
+    description: "Explore sheep population data for every country from 1961 to 2021. Compare flocks to human populations, track six decades of change, and discover which nations are truly sheep country.",
+    images: [{ url: "/og-image.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BaaChart – Global Sheep Population Explorer",
+    description: "Explore sheep population data for every country from 1961 to 2021. Compare flocks to human populations, track six decades of change, and discover which nations are truly sheep country.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
